@@ -12,7 +12,7 @@ var fs = require('fs'),
 /* Connect to your database using mongoose - remember to keep your key secret*/
 //see https://mongoosejs.com/docs/connections.html
 //See https://docs.atlas.mongodb.com/driver-connection/
-
+mongoose.connect('mongodb+srv://jthurber17:1234@cluster0-bvvme.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
 /* 
   Instantiate a mongoose model for each listing object in the JSON file, 
   and then save it to your Mongo database 
@@ -20,7 +20,18 @@ var fs = require('fs'),
 
   Remember that we needed to read in a file like we did in Bootcamp Assignment #1.
  */
-
+fs.readFile('listings.json', 'utf8', function(err, data){
+  var listData = JSON.parse(data);
+  listData.entries.forEach(function(entries){
+   // var m = mongoose.model('Listing', Listing.listingSchema);
+    var entry = Listing(entries);
+    entry.save(function (err) {
+      if (err)
+        return err;
+    });
+    
+  });
+});
 
 /*  
   Check to see if it works: Once you've written + run the script, check out your MongoLab database to ensure that 
