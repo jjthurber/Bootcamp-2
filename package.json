@@ -20,7 +20,7 @@
   "dependencies": {
     "mocha": "^6.2.0",
     "mongodb": "^2.2.36",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "nodejs": "0.0.0",
     "should": "^13.2.3"
   }
