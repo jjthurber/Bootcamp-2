@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/jjthurber/Fall2019_Bootcamp#readme",
   "dependencies": {
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "mongodb": "^2.2.36",
     "mongoose": "^5.7.1",
     "nodejs": "0.0.0",
